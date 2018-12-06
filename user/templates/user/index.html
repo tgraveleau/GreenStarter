@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Liste des utilisateurs</h1>
+    <div class="container">
+        <ul>
+            {% for user in users %}
+            <li><a href="{% url 'user:view' user.id %}">{{ user }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <a href="{% url 'user:add' %}" class="btn"><i class="material-icons left">add</i>Ajouter un utilisateur</a>
+{% endblock %}

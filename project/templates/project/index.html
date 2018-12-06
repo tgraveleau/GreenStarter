@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Liste des projets</h1>
+    <div class="container">
+        <ul>
+            {% for project in projects %}
+            <li><a href="{% url 'project:view' project.id %}">{{ project }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <a href="{% url 'project:add' %}" class="btn"><i class="material-icons left">add</i>Ajouter un projet</a>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load material_form %}
+
+{% block content %}
+    <h1>User add</h1>
+    <ul>
+        {% for user in users %}
+        <li>{{ user }}</li>
+        {% endfor %}
+    </ul>
+<div class="container">
+    <div class="card">
+        <form action="{% url 'user:add' %}" method="post">
+            {% csrf_token %}
+            {% form %}
+                {% part form.username prefix %}<i class="material-icons prefix">account_box</i>{% endpart %}
+            {% endform %}
+            <input type="submit" class="btn" value="Submit">
+        </form>
+    </div>
+</div>
+{% endblock %}
