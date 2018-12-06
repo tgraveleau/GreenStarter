@@ -12,12 +12,11 @@ def view(request, id):
     return render(request, "project/view.html", {'project': project})
 
 def add(request):
-    users = User.objects.all()
-    form = ProjetForm(request.POST or None, initial={'createur':users[0].id})
+    form = ProjetForm(request.POST or None)
     if request.method == 'POST':
         if form.is_valid():
             projet = Project(
-                title=form.cleaned_data['title'],
+                titre=form.cleaned_data['titre'],
                 description=form.cleaned_data['description'],
                 createur=form.cleaned_data['createur'],
             )
