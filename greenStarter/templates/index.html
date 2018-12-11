@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Projets créé récemment</h1>
+    <div class="container">
+        <ul>
+            {% for project in recentProjects %}
+            <li><a href="{% url 'project:view' project.id %}">{{ project }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

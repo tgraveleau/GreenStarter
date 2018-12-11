@@ -2,7 +2,10 @@ from django.db import models
 from user.models import User
 
 
-class Project(models.Model):
+class Projet(models.Model):
+    class Meta:
+        ordering = ['titre']
+        get_latest_by='id'
     titre = models.CharField(max_length=100)
     description = models.TextField()
     createur = models.ForeignKey(User, on_delete=models.CASCADE)

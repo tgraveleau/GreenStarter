@@ -30,10 +30,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'karma',
-    'makeOurPlanetGreatAgain',
+    'greenStarter',
     'material',
     'material.frontend',
-    'project',
+    'projet',
     'user',
 ]
 
@@ -47,7 +47,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'makeOurPlanetGreatAgain.urls'
+ROOT_URLCONF = 'greenStarter.urls'
 
 TEMPLATES = [
     {
@@ -67,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'makeOurPlanetGreatAgain.wsgi.application'
+WSGI_APPLICATION = 'greenStarter.wsgi.application'
 
 DATABASES = {
     'default': {
