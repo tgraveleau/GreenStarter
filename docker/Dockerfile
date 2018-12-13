@@ -18,7 +18,7 @@ ARG BDDNAME=makeOurPlanetGreatAgain
 
 # install django project and set apache2 conf
 WORKDIR /var/www/html
-RUN git clone $GITADRESS && pip3 install -r $PROJECT/$REQUIREMENTS && $PROJECT/manage.py collectstatic --noinput && mv apache2.conf /etc/apache2 && rm -fr $PROJECT/$REQUIREMENTS docker
+RUN git clone $GITADRESS && pip3 install -r $PROJECT/$REQUIREMENTS && $PROJECT/manage.py collectstatic --noinput && mv $PROJECT/docker/apache2.conf /etc/apache2 && rm -fr $PROJECT/$REQUIREMENTS $PROJECT/docker
 
 # mysql
 RUN service mysql start \
