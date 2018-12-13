@@ -24,7 +24,7 @@ Ici, `-d` exécute le conteneur en tâche de fond et `-p` map un port du systèm
 Donc vous pouvez accéder au site à l'adresse suivante: `localhost:8000`
 
 ## Installation manuel
-### Dépendance requise
+### Dépendances requises
 **Programmes**
 * Python 3.5
 * apache2
@@ -43,15 +43,15 @@ pip3 install -r requirements.txt
 ```
 
 ### Mise en place
-Remplacer la configuration d'Apache2 dans /etc/apache2 par apache2.conf dans le dossier docker, puis redémarrer le service.
-Placer le projet dans /var/www/html, placer vous dedans et lancer dans une console :
+Remplacez la configuration d'Apache2 dans /etc/apache2 par apache2.conf dans le dossier docker, puis redémarrez le service.
+Placez le projet dans /var/www/html, placer vous dedans et lancez dans une console :
 ```
 python3 manage.py collectstatic --noinput
 ```
 
 ### MariaDB
 Concernant la base de données, la configuration de Django se trouve dans greenstarter/settings.py.
-Nous vous conseillons **très** fortement de changer les informations de connextions à la base de données !
+Nous vous conseillons **très** fortement de changer les informations de connexions à la base de données !
 **La base de données et l'utilisateur doivent déjà exister avant de passer à l'étape suivante !**
 
 Pour mettre en place la structure de la base de données dans MariaDB, exécutez dans une console :
