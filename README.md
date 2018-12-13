@@ -50,8 +50,8 @@ python3 manage.py collectstatic --noinput
 ```
 
 ### MariaDB
-Concernant la base de données, la configuration de Django se trouve dans greenstarter/settings.py.
-Nous vous conseillons **très** fortement de changer les informations de connexions à la base de données !
+Concernant la base de données, la configuration de Django se trouve dans greenstarter/settings.py.  
+Nous vous conseillons **très** fortement de changer les informations de connexions à la base de données !  
 **La base de données et l'utilisateur doivent déjà exister avant de passer à l'étape suivante !**
 
 Pour mettre en place la structure de la base de données dans MariaDB, exécutez dans une console :
