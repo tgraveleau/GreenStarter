@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'material.frontend',
     'projet',
     'user',
+    'note',
+    'recompense',
 ]
 
 MIDDLEWARE = [
