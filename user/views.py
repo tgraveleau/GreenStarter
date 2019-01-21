@@ -1,21 +1,21 @@
 from django.shortcuts import render, redirect
-from .models import User
+from .models import AppUser
 from .forms import RegistrationForm
 
 
 def index(request):
-    users = User.objects.all()
+    users = AppUser.objects.all()
     return render(request, "user/index.html", {'users': users})
 
 def view(request, id):
-    user = User.objects.get(id=id)
+    user = AppUser.objects.get(id=id)
     return render(request, "user/view.html", {'user': user})
 
 def add(request):
     form = RegistrationForm(request.POST or None)
     if request.method == 'POST':
         if form.is_valid():
-            user = User(
+            user = AppUser(
                 username=form.cleaned_data['username'],
                 email=form.cleaned_data['email'],
                 password=form.cleaned_data['password'],

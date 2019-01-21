@@ -1,14 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-
-class User(models.Model):
+class AppUser(User):
     class Meta:
         ordering = ['first_name', 'last_name']
-    username = models.CharField(max_length=50)
-    email = models.EmailField(max_length=100)
-    password = models.CharField(max_length=50)
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
     gender = models.CharField(max_length=1)
     karma = models.IntegerField(default=0)
 
