@@ -26,7 +26,7 @@ RUN service mysql start \
 && mysql -u root --execute="CREATE USER '$ADMIN'@'%' IDENTIFIED BY '$PASSWORD'" \
 && mysql -u root --execute="GRANT ALL PRIVILEGES ON $BDDNAME.* TO '$ADMIN'@'%' WITH GRANT OPTION" \
 && mysql -u root --execute="FLUSH PRIVILEGES" \
-&& $PROJECT/manage.py makemigrations && $PROJECT/manage.py migrate
+&& $PROJECT/manage.py makemigrations && $PROJECT/manage.py migrate && $PROJECT/manage.py loaddata $PROJECT/fixtures/initial_data.json
 
 # Server
 EXPOSE 80
