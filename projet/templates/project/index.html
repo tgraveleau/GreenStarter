@@ -1,13 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Liste des projets</h1>
-    <div class="container">
-        <ul>
-            {% for project in projects %}
-            <li><a href="{% url 'project:view' project.id %}">{{ project }}</a></li>
-            {% endfor %}
-        </ul>
+    <h1>Projects list</h1>
+    <div class="row">
+        <div class="col s12 l4 offset-l8">
+            <a href="{% url 'project:add' %}" class="btn"><i class="material-icons left">add</i>Add project</a>
+        </div>
+        <div class="col s12">
+            <div class="card">
+                <div class="card-content">
+                    <div class="collection">
+                        {% for project in projects %}
+                        <a class="collection-item avatar" href="{% url 'project:view' project.id %}">
+                            <i class="material-icons circle">event_available</i>
+                            <span class="title">{{ project }}</span>
+                            <p>
+                                Creator : {{ project.createur }}<br>
+                            </p>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <a href="{% url 'project:add' %}" class="btn"><i class="material-icons left">add</i>Ajouter un projet</a>
 {% endblock %}

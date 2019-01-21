@@ -1,13 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Liste des utilisateurs</h1>
-    <div class="container">
-        <ul>
-            {% for user in users %}
-            <li><a href="{% url 'user:view' user.id %}">{{ user }}</a></li>
-            {% endfor %}
-        </ul>
+    <h1>Users list</h1>
+    <div class="row">
+        <div class="col s12 l4 offset-l8">
+            <a href="{% url 'user:add' %}" class="btn"><i class="material-icons left">add</i>Add user</a>
+        </div>
+        <div class="col s12">
+            <div class="card">
+                <div class="card-content">
+                    <div class="collection">
+                        {% for user in users %}
+                        <a class="collection-item avatar" href="{% url 'user:view' user.id %}">
+                            <i class="material-icons circle">person</i>
+                            <span>{{ user }}</span>
+                            <p>
+                                Karma : {{ user.karma }}<br>
+                                {{ user.projets.count }} project{% if user.projets.count > 1 %}s{% endif %}
+                            </p>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <a href="{% url 'user:add' %}" class="btn"><i class="material-icons left">add</i>Ajouter un utilisateur</a>
 {% endblock %}

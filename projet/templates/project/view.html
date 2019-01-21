@@ -3,12 +3,15 @@
 {% block content %}
     <h1>{{ project }}</h1>
     <div class="row">
-        <div class="col m6 l4">
+        <div class="col s12 l6">
             <div class="card">
                 <div class="card-content">
                     <span class="card-title">Infos</span>
-                    Id: {{ project.id }}<br>
-                    Description: {{ project.description }}
+                    <ul>
+                        <li>Title : {{ project.titre }}</li>
+                        <li>Creator : <a href="{% url 'user:view' project.createur.id %}">{{ project.createur }}</a></li>
+                        <li>Description : {{ project.description }}</li>
+                    </ul>
                 </div>
             </div>
         </div>

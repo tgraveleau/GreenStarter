@@ -3,12 +3,30 @@
 {% block content %}
     <h1>{{ user }}</h1>
     <div class="row">
-        <div class="col m6 l4">
+        <div class="col s12 l6">
             <div class="card">
                 <div class="card-content">
-                    <span class="card-title">Infos persos</span>
-                    {{ user.id }}
-                    <span class="card-title">Récompenses obtenues</span>
+                    <span class="card-title">Personal data</span>
+                    <ul>
+                        <li>Username : {{ user.username }}</li>
+                        <li>First name : {{ user.first_name }}</li>
+                        <li>Last name : {{ user.last_name }}</li>
+                        <li>Email : {{ user.email }}</li>
+                        <li>Karma : {{ user.karma }}</li>
+                        <li>Nombre de projets : {{ user.projets.count }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 l6">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">Projects</span>
+                    <div class="collection">
+                        {% for project in user.projets.all %}
+                            <a class="collection-item" href="{% url 'project:view' project.id %}">{{ project }}</a>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Projet
 from .forms import ProjetForm
+from user.models import AppUser
 
 def index(request):
     projects = Projet.objects.all()
@@ -19,6 +20,9 @@ def add(request):
                 description=form.cleaned_data['description'],
                 createur=form.cleaned_data['createur'],
             )
+            user = get_object_or_404(AppUser, id=projet.createur.id)
+            user.karma += Projet.KARMA_POINTS
             projet.save()
+            user.save()
             return redirect('project:view', projet.id)
     return render(request, "project/add.html", {'form': form})

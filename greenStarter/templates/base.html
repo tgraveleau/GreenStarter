@@ -17,7 +17,6 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="{% url 'user:index' %}">User</a></li>
                 <li><a href="{% url 'project:index' %}">Project</a></li>
-                <li><a href="{% url 'recompense:index' %}">Recompense</a></li>
                 <li><a href="{% url 'admin:index' %}">Admin</a></li>
             </ul>
         </div>
@@ -34,14 +33,15 @@
         </li>
         <li><a href="{% url 'user:index' %}">User</a></li>
         <li><a href="{% url 'project:index' %}">Project</a></li>
-                <li><a href="{% url 'recompense:index' %}">Recompense</a></li>
         <li><a href="{% url 'admin:index' %}">Admin</a></li>
     </ul>
 
     <main>
+        <div class="container">
         {% block content %}
             Page non trouvée ...
         {% endblock %}
+        </div>
     </main>
 
     {% block js %}
