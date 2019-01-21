@@ -1,5 +1,12 @@
 from django.db import models
 
+
+class Karma(models.Model):
+    valeur = models.IntegerField(default=0)
+
+    def __str__(self):
+        return str(self.id)
+
 class User(models.Model):
     class Meta:
         ordering = ['first_name', 'last_name']
@@ -9,6 +16,7 @@ class User(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     gender = models.CharField(max_length=1)
+    karma = models.ForeignKey(Karma, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name + ' (' + str(self.username) + ')'

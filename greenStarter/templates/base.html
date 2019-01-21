@@ -15,12 +15,10 @@
             <a href="{% url 'home' %}" class="brand-logo">Green starter</a>
             <a href="#" data-target="sidenav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="{% url 'karma:index' %}">Karma</a></li>
                 <li><a href="{% url 'user:index' %}">User</a></li>
                 <li><a href="{% url 'project:index' %}">Project</a></li>
-                <li><a href="{% url 'admin:index' %}">Admin</a></li>
-                <li><a href="{% url 'note:index' %}">Note</a></li>
                 <li><a href="{% url 'recompense:index' %}">Recompense</a></li>
+                <li><a href="{% url 'admin:index' %}">Admin</a></li>
             </ul>
         </div>
     </nav>
@@ -34,11 +32,9 @@
                 <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
             </div>
         </li>
-        <li><a href="{% url 'karma:index' %}">Karma</a></li>
-        <li><a href="{% url 'note:index' %}">Note</a></li>
-        <li><a href="{% url 'note:index' %}">Recompense</a></li>
         <li><a href="{% url 'user:index' %}">User</a></li>
         <li><a href="{% url 'project:index' %}">Project</a></li>
+                <li><a href="{% url 'recompense:index' %}">Recompense</a></li>
         <li><a href="{% url 'admin:index' %}">Admin</a></li>
     </ul>
 

@@ -29,13 +29,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'karma',
     'greenStarter',
     'material',
     'material.frontend',
     'projet',
     'user',
-    'note',
     'recompense',
 ]
 

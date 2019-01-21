@@ -10,6 +10,7 @@ class Projet(models.Model):
     titre = models.CharField(max_length=100)
     description = models.TextField()
     createur = models.ForeignKey(User, on_delete=models.CASCADE)
+    note = models.IntegerField(default=0)
 
     def __str__(self):
         return self.titre
