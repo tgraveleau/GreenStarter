@@ -2,3 +2,13 @@
 \.idea/
 
 project/__pycache__/
+
+greenStarter/__pycache__/settings\.cpython-35\.pyc
+
+greenStarter/__pycache__/views\.cpython-35\.pyc
+
+projet/__pycache__/forms\.cpython-35\.pyc
+
+projet/__pycache__/models\.cpython-35\.pyc
+
+projet/migrations/__pycache__/0003_auto_20190121_1319\.cpython-35\.pyc
