@@ -5,6 +5,7 @@ from user.models import User
 class ProjetForm(forms.Form):
     titre = forms.CharField()
     description = forms.CharField()
+    # On récupère les objets User pour définir les valeurs du select
     createur = forms.ModelChoiceField(User.objects.all())
 
     # Mise en forme du layout directement en python pour ne pas avoir à faire de html

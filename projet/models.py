@@ -4,6 +4,7 @@ from user.models import User
 
 class Projet(models.Model):
     class Meta:
+        # On défini le comportement par défaut lors de la récupération des objets
         ordering = ['titre']
         get_latest_by='id'
     titre = models.CharField(max_length=100)
